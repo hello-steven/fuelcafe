@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Krona One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Krona One'), local('KronaOne-Regular'), url(https://web.archive.org/web/20180313050525im_/https://fonts.gstatic.com/s/kronaone/v5/jAnEgHdjHcjgfIb1ZcUyNoWl.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://web.archive.org/web/20180313050525im_/https://fonts.gstatic.com/s/montserrat/v12/JTUSjIg1_i6t8kCHKm459Wlhzg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Montserrat Bold'), local('Montserrat-Bold'), url(https://web.archive.org/web/20180313050525im_/https://fonts.gstatic.com/s/montserrat/v12/JTURjIg1_i6t8kCHKm45_dJE3gnD-w.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Yellowtail';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Yellowtail Regular'), local('Yellowtail-Regular'), url(https://web.archive.org/web/20180313050525im_/https://fonts.gstatic.com/s/yellowtail/v8/OZpGg_pnoDtINPfRIlLohlvHxA.ttf) format('truetype');
+}
+
+/*
+     FILE ARCHIVED ON 05:05:25 Mar 13, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 04:06:36 Dec 08, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 93.42 (3)
+  esindex: 0.009
+  captures_list: 114.133
+  CDXLines.iter: 11.642 (3)
+  PetaboxLoader3.datanode: 147.288 (4)
+  exclusion.robots: 0.181
+  exclusion.robots.policy: 0.169
+  RedisCDXSource: 4.714
+  PetaboxLoader3.resolve: 130.452
+  load_resource: 234.377
+*/

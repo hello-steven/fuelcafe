@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="147px" height="69px" viewBox="0 0 147 69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-678.000000, -251.000000)">
+            <g id="photos" transform="translate(573.000000, 36.000000)">
+                <g id="Group" transform="translate(105.000000, 215.000000)">
+                    <polygon id="Rectangle" fill="#FFFFFF" points="0 12.0348837 19.1273196 0 128.044856 1.00577917 147 12.0348837 147 56.9651163 128.740517 69 17 69 0 56.3781413"></polygon>
+                    <path d="M20.3021004,5.01162791 L126.104387,5.01162791 L142,14.9946829 L142,54.832707 L127.431409,64.7906977 L18.3462883,64.7906977 L5,54.2879243 L5,15.1857034 L20.3021004,5.01162791 Z" id="Rectangle-Copy" stroke="#000000" stroke-width="2"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

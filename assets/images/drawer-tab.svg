@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="148px" height="85px" viewBox="0 0 148 85" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="149" height="85"></rect>
+        <polygon id="path-3" points="20.105061 0 122.270087 0 142.703093 21.6552633 142.703093 272.06542 122.270087 294.927606 26.2349626 294.927606 1.57410667 272.067413 0 20.7303115"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="fuel_menu" transform="translate(-1.000000, -188.000000)">
+            <g id="Group" transform="translate(0.000000, 188.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask"></g>
+                <g mask="url(#mask-2)" id="Rectangle-5-Copy-3">
+                    <g transform="translate(0.000000, -218.000000)">
+                        <polygon fill="#FFFFFF" fill-rule="nonzero" points="20.9571263 0 127.451972 0 148.750941 21.8696916 148.750941 278.449277 127.451972 302.619423 27.3468171 302.619423 1.64081831 278.451355 -5.68434189e-14 20.9055398"></polygon>
+                        <g stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(3.000000, 4.000000)">
+                            <g id="path-1-Clipped">
+                                <mask id="mask-4" fill="white">
+                                    <use xlink:href="#path-3"></use>
+                                </mask>
+                                <g id="path-1"></g>
+                                <polygon id="path-1" stroke="#2B2A29" stroke-width="4.25999975" mask="url(#mask-4)" points="20.105061 0 122.270087 0 142.703093 21.6552633 142.703093 272.06542 122.270087 294.927606 26.2349626 294.927606 1.57410667 272.067413 0 20.7303115"></polygon>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
