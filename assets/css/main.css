@@ -611,7 +611,7 @@ header {
     margin: 0 auto;
     text-align: center;
     padding: .75em 0 1.25em;
-    background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-middle-bg.svg);
+    background: url(/assets/images/label-middle-bg.svg);
     background-color: transparent;
     background-size: auto 100%;
     box-sizing: border-box;
@@ -623,7 +623,7 @@ header {
     width: 20px;
     height: 50px;
     background-color: #000;
-    background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-end-3.svg);
+    background: url(/assets/images/label-end-3.svg);
     background-size: auto 100%;
     position: absolute;
     left: -20px;
@@ -636,7 +636,7 @@ header {
     position: absolute;
     top: 0;
     right: -20px;
-    background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-end-3.svg);
+    background: url(/assets/images/label-end-3.svg);
     transform: scaleX(-1);
     z-index: 100;
     background-size: auto 100%;
@@ -825,7 +825,7 @@ header {
   height: 300px;
   z-index: 100;
   width: 100%;
-  background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/fuel_menu.svg);
+  background-image: url(/assets/images/fuel_menu.svg);
   background-size: 100% 100%;
   background-repeat: no-repeat; 
   max-width: 160px;
@@ -914,7 +914,7 @@ header {
   background-position: 50%;
 }
 /*.gutter:before {
-  content: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/location-controller.png);
+  content: url(/assets/images/location-controller.png);
   width: 53px;
   height: 53px;
   position: absolute;
@@ -936,7 +936,7 @@ header {
 #split_gutter,
 .gutter.gutter-horizontal {
   cursor: col-resize;
-  /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/grips/vertical.png);*/
+  /*background-image: url(/assets/grips/vertical.png);*/
   /*background-color: #2B2A29;*/
 }
 
@@ -986,19 +986,19 @@ header {
   padding-top: 0;
 }
 .center-street {
-	/*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-home-center-1100.jpg);*/
+	/*background-image: url(/assets/images/bg-home-center-1100.jpg);*/
 	/*left: 0;*/
 }
 .walkers-point {
-  /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/walkers-point-home.png);*/
+  /*background-image: url(/assets/images/walkers-point-home.png);*/
   /*right: 0;*/
 }
 /*center street backgrounds*/
 .center-street-header {
-  background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-home-center-1100.jpg);
+  background-image: url(/assets/images/bg-home-center-1100.jpg);
 }
 .center-menu {
-    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-menu-center.jpg);*/
+    /*background-image: url(/assets/images/bg-menu-center.jpg);*/
     background-size: cover;
     background-position: right center;
 }
@@ -1067,28 +1067,28 @@ header {
 	transform: rotate(0deg) translate3d(0, 0, 0);
 }
 .center-events {
-    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/center-events-bg.jpg);*/
+    /*background-image: url(/assets/images/center-events-bg.jpg);*/
     background-size: cover;
     background-position: right center;
 }
 .center-about {
-    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/center-about-bg.jpg);*/
+    /*background-image: url(/assets/images/center-about-bg.jpg);*/
     background-size: cover;
     background-position: right center;
 }
 .center-merch {
-    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/walker-mugs.png);*/
+    /*background-image: url(/assets/images/walker-mugs.png);*/
     background-size: cover;
     background-position: center center;
 }
 
 /*walkers point backgrounds*/
 .walkers-point-header {
-  background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-home-walkers-1100.jpg);
+  background-image: url(/assets/images/bg-home-walkers-1100.jpg);
   background-position: left center;
 }
 .walkers-menu {
-  /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-menu-walker.jpg);*/
+  /*background-image: url(/assets/images/bg-menu-walker.jpg);*/
     background-size: cover;
     background-position: left center;
 }
@@ -1108,17 +1108,17 @@ header {
   transform: rotate(5deg) translate3d(-120px, -70px, 0);
 }
 .walkers-events {
-    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-events-walkers-1100.jpg);*/
+    /*background-image: url(/assets/images/bg-events-walkers-1100.jpg);*/
     background-size: cover;
     background-position: right center;
 }
 .walkers-about {
-    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-about-walkers-1100.jpg);*/
+    /*background-image: url(/assets/images/bg-about-walkers-1100.jpg);*/
     background-size: cover;
     background-position: 65% center;
 }
 .walkers-merch {
-    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/walker-merch-front.png);*/
+    /*background-image: url(/assets/images/walker-merch-front.png);*/
     background-size: cover;
     background-position: left center;
 }
@@ -1258,7 +1258,7 @@ p.hours-text {
 .walkers-point .small-caps-title::after {
     content: '';
     width: 50%;
-    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/paint_swish_thick.png);
+    background-image: url(/assets/images/paint_swish_thick.png);
     position: absolute;
     bottom: 0;
     background-size: 100%;
@@ -1273,10 +1273,10 @@ p.hours-text {
 }
 
 .center-street .small-caps-title:nth-child(odd)::after {
-    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/paint_swish_thin.png);
+    background-image: url(/assets/images/paint_swish_thin.png);
 }
 .walkers-point .small-caps-title:nth-child(even)::after {
-    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/paint_swish_thin.png);
+    background-image: url(/assets/images/paint_swish_thin.png);
 }
 .medium-text {
 	color: #fff;
@@ -1350,7 +1350,7 @@ p.hours-text {
 .medium-caps-title::after  {
     content: '';
     width: 60%;
-    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/big_fill_line.svg);
+    background-image: url(/assets/images/big_fill_line.svg);
     position: absolute;
     bottom: 0;
     background-size: 100%;
@@ -1365,11 +1365,11 @@ p.hours-text {
 }
 .center-street .big-menu-title:nth-child(odd)::after,
 .center-street .medium-caps-title:nth-child(odd)::after {
-    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/paint_swish_thin.png);
+    background-image: url(/assets/images/paint_swish_thin.png);
 }
 .walkers-point .big-menu-title:nth-child(even)::after,
 .walkers-point .medium-caps-title:nth-child(even)::after {
-    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/paint_swish_thin.png);
+    background-image: url(/assets/images/paint_swish_thin.png);
 }
 .medium-caps-title {
   font-size: 16px;
@@ -1445,8 +1445,8 @@ a.classic-button:hover {
 }
 
 .newspaper-background {
-/*   background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/newspaper_png.png); */
-  background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/fuel-menu-bg.jpg);
+/*   background-image: url(/assets/images/newspaper_png.png); */
+  background-image: url(/assets/images/fuel-menu-bg.jpg);
   background-size: 65px;
   display: inline-block;
   background-repeat: no-repeat;
@@ -1488,7 +1488,7 @@ a.classic-button:hover {
 }
 .made-in-mke::after {
   content: ' ';
-  background-image: url('/web/20180313052244im_/http://www.fuelcafe.com/assets/images/mke_heart.svg');
+  background-image: url('/assets/images/mke_heart.svg');
   background-repeat: no-repeat;
   display: inline-block;
   width: 100%;
@@ -1562,7 +1562,7 @@ a.classic-button:hover {
   width: 240px;
   margin: 0;
   position: relative;
-  background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/octagon-svg.svg);
+  background-image: url(/assets/images/octagon-svg.svg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -1881,7 +1881,7 @@ a.classic-button:hover {
 
 .slick-loading .slick-list
 {
-    /*background: #fff url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/ajax-loader.gif') center center no-repeat;*/
+    /*background: #fff url('/assets/css/ajax-loader.gif') center center no-repeat;*/
 }
 
 /* Icons */
@@ -1892,8 +1892,8 @@ a.classic-button:hover {
     font-weight: normal;
     font-style: normal;
 
-    src: url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/fonts/slick.eot');
-    src: url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/fonts/slick.eot#iefix') format('embedded-opentype'), url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/fonts/slick.woff') format('woff'), url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/fonts/slick.ttf') format('truetype'), url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/fonts/slick.svg#slick') format('svg');
+    src: url('/assets/css/fonts/slick.eot');
+    src: url('/assets/css/fonts/slick.eot#iefix') format('embedded-opentype'), url('/assets/css/fonts/slick.woff') format('woff'), url('/assets/css/fonts/slick.ttf') format('truetype'), url('/assets/css/fonts/slick.svg#slick') format('svg');
 }
 */
 
@@ -2325,7 +2325,7 @@ bottom: 1em;
 left: 0;
 right: 0;
 margin: 0 auto;
-background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/caption-bg.svg);
+background-image: url(/assets/images/caption-bg.svg);
 background-size: contain;
 background-repeat: no-repeat;
   width: 147px;
@@ -2431,7 +2431,7 @@ outline: none;
 /*   top: 0; */
   position: fixed;
   height: 85px;
-background-image:url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/drawer-tab.svg);
+background-image:url(/assets/images/drawer-tab.svg);
   background-size: 100% 100%;
   background-position: center top;
   background-repeat: no-repeat;
@@ -2649,7 +2649,7 @@ width: 100%;
 width: calc(100% - 40px);
 height: 51px;
 background-color: #fff;
-  background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-middle-bg.svg);
+  background: url(/assets/images/label-middle-bg.svg);
   background-color: transparent;
     background-size: auto 100%;
 position: fixed;
@@ -2669,7 +2669,7 @@ z-index: 20;
   width: 20px;
   height: 50px;
   background-color: #000;
-  background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-end-3.svg);
+  background: url(/assets/images/label-end-3.svg);
   background-size: auto 100%;
   position: absolute;
   left: -20px;
@@ -2682,7 +2682,7 @@ z-index: 20;
   position: absolute;
   top: 0;
   right: -20px;
-  background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-end-3.svg);
+  background: url(/assets/images/label-end-3.svg);
   -webkit-transform: scaleX(-1);
           transform: scaleX(-1);
   z-index: 100;
@@ -3160,7 +3160,7 @@ h3 {
     width: 250px;
     height: 45px;
     background-color: transparent;
-    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/octagon-svg.svg);
+    background-image: url(/assets/images/octagon-svg.svg);
     background-repeat: no-repeat;
     background-position: -1% center;
     position: fixed;
@@ -3359,7 +3359,7 @@ h3 {
     /* mobile menu styles */
     .main-nav.fuel-menu {
         width: calc(100% - 48px);
-      background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/menu_middle_shadow.svg);
+      background: url(/assets/images/menu_middle_shadow.svg);
       background-repeat: repeat-x;
         background-color: transparent;
         background-size: auto 100%; 
@@ -3368,7 +3368,7 @@ h3 {
     }
     .main-nav.fuel-menu:before,
     .main-nav.fuel-menu:after {
-      background:url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/menu_end_shadow.svg);
+      background:url(/assets/images/menu_end_shadow.svg);
         background-size: auto 100%;
       width: 24px;
     }

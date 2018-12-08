@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="50px" viewBox="0 0 24 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>mobile</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 16.4583333 0 5.02832031 322 5.21289062 322 16.4583333 322 38.5416667 303.050756 50 22.6397103 50 0 38.5416667"></polygon>
+        <filter x="-2.3%" y="-16.7%" width="104.7%" height="133.4%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.5 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <polygon id="path-3" points="0 18.7770834 0 8.95507812 310.400192 9.44238281 310.400192 18.7770834 310.400192 36.1529169 294.244266 45.9300003 19.3023785 45.9300003 0 36.1529169"></polygon>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="mobile" transform="translate(0.000000, -40.000000)">
+            <g id="label-middle-bg" transform="translate(-1.000000, 35.000000)">
+                <g id="Rectangle-8" fill-rule="nonzero">
+                    <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                </g>
+                <g id="Rectangle-8" transform="translate(5.411765, 0.000000)">
+                    <g id="path-1-Clipped">
+                        <mask id="mask-4" fill="white">
+                            <use xlink:href="#path-3"></use>
+                        </mask>
+                        <g id="path-1"></g>
+                        <polygon id="path-1" stroke="#2B2A29" stroke-width="2" points="0 18.7770834 0 2.18164062 310.400192 2.18164062 310.400192 18.7770834 310.400192 36.1529169 294.244266 45.9300003 19.3023785 45.9300003 0 36.1529169"></polygon>
+                        <rect id="Rectangle-6" fill="#FFFFFF" x="1.58823529" y="0" width="308" height="11"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

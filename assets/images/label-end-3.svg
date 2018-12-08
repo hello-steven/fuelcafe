@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="19px" height="45px" viewBox="0 0 19 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 9</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="27 20.7770834 27 0.955078125 256.426229 1.44238281 256.426229 20.7770834 256.426229 38.1529169 244.484892 47.9300003 41.2669754 47.9300003 27 38.1529169"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="229.426229" height="46.9749222" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Photo-driven-mock" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Fuel-Home-Middle" transform="translate(-460.000000, -3043.000000)">
+            <g id="Footer-dark-Copy-3" transform="translate(437.000000, 3036.000000)">
+                <g id="Group-9">
+                    <polygon id="Rectangle-8" fill="#FFFFFF" points="23 18.4583333 23 7.02832031 261 7.21289062 261 18.4583333 261 40.5416667 246.994037 52 39.7336989 52 23 40.5416667"></polygon>
+                    <use id="Rectangle-8" stroke="#2B2A29" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                    <g id="Group-11-Copy" transform="translate(0.000000, 17.000000)"></g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
