@@ -1,0 +1,3699 @@
+/***
+Byte Boilerplate, with parts from Foundation and other sources, noted inline below
+Version 2 - 2016-07-11 by MD, SP & the Byte Studios Team
+***/
+
+
+/** {
+  overflow-x: hidden;
+}*/
+
+/* rows and columns from http://www.sitepoint.com/understanding-css-grid-systems/ */
+.row, .column {
+	box-sizing: border-box;
+}
+.row:before, .row:after {
+	content: " ";
+	display: table;
+}
+.row:after {
+	clear: both;
+}
+.column {
+	position: relative;
+	float: left;
+	display: block;
+}
+.grid-w-gutters .column + .column {
+	margin-left: 1.6%;
+}
+/* end rows and columns from http://www.sitepoint.com/understanding-css-grid-systems/ */
+
+/* grids and columns */
+.float-left { float: left !important; }
+.float-right { float: right !important; }
+.float-center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+.clearfix::before, .clearfix::after {
+	content: ' ';
+	display: table;
+}
+.clearfix::after { clear: both; }
+.invisible { visibility: hidden; }
+.is-visible { display: block !important; }
+.is-hidden { display: none !important; }
+
+.grid, .grid-w-gutters {
+	width: 100%;
+	max-width: 1020px;
+	position: relative;
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+.col-1-across { width: 8.33%; }
+.col-2-across { width: 16.66%; }
+.col-3-across { width: 25%; }
+.col-4-across { width: 33.33%; }
+.col-5-across { width: 41.66%; }
+.col-6-across { width: 50%; }
+.col-7-across { width: 58.33%; }
+.col-8-across { width: 66.66%; }
+.col-9-across { width: 75%; }
+.col-10-across { width: 83.33%; }
+.col-11-across { width: 91.66%; }
+.col-12-across { width: 100%; }
+.grid-w-gutters .col-1-across { width: 6.86666666667%; }
+.grid-w-gutters .col-2-across { width: 15.3333333333%; }
+.grid-w-gutters .col-3-across { width: 23.8%; }
+.grid-w-gutters .col-4-across { width: 32.2666666667%; }
+.grid-w-gutters .col-5-across { width: 40.7333333333%; }
+.grid-w-gutters .col-6-across { width: 49.2%; }
+.grid-w-gutters .col-7-across { width: 57.6666666667%; }
+.grid-w-gutters .col-8-across { width: 66.1333333333%; }
+.grid-w-gutters .col-9-across { width: 74.6%; }
+.grid-w-gutters .col-10-across { width: 83.0666666667%; }
+.grid-w-gutters .col-11-across { width: 91.5333333333%; }
+.grid-w-gutters .col-12-across { width: 100%; }
+
+.no-bullet { margin-left: 0; list-style: none; }
+
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+.text-center { text-align: center; }
+.text-justify { text-align: justify; }
+
+.full-span {
+  display: block;
+  margin: 10px auto;
+}
+/* end grids and columns */
+
+/* form normalizations from Foundation */
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
+textarea {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  height: 2.4375rem;
+  padding: 0.5rem;
+  border: 1px solid #cacaca;
+  margin: 0 0 1rem;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #0a0a0a;
+  background-color: #fefefe;
+  box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+  border-radius: 7px;
+  transition: box-shadow 0.5s, border-color 0.25s ease-in-out;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+  [type='text']:focus, [type='password']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='month']:focus, [type='week']:focus, [type='email']:focus, [type='number']:focus, [type='search']:focus, [type='tel']:focus, [type='time']:focus, [type='url']:focus, [type='color']:focus,
+  textarea:focus {
+	border: 1px solid #8a8a8a;
+	background-color: #fefefe;
+	outline: none;
+	box-shadow: 0 0 5px #cacaca;
+	transition: box-shadow 0.5s, border-color 0.25s ease-in-out; }
+
+textarea {
+  max-width: 100%; }
+  textarea[rows] {
+	height: auto; }
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #cacaca; }
+
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #cacaca; }
+
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #cacaca; }
+
+input::placeholder,
+textarea::placeholder {
+  color: #cacaca; }
+
+input:disabled, input[readonly],
+textarea:disabled,
+textarea[readonly] {
+  background-color: #e6e6e6;
+  cursor: not-allowed; }
+
+[type='submit'],
+[type='button'] {
+  border-radius: 7px;
+  -webkit-appearance: none;
+  -moz-appearance: none; }
+
+input[type='search'] {
+  box-sizing: border-box; }
+
+[type='file'],
+[type='checkbox'],
+[type='radio'] {
+  margin: 0 0 1rem; }
+
+[type='checkbox'] + label,
+[type='radio'] + label {
+  display: inline-block;
+  margin-left: 0.5rem;
+  margin-right: 1rem;
+  margin-bottom: 0;
+  vertical-align: baseline; }
+  [type='checkbox'] + label[for],
+  [type='radio'] + label[for] {
+	cursor: pointer; }
+
+label > [type='checkbox'],
+label > [type='radio'] {
+  margin-right: 0.5rem; }
+
+[type='file'] {
+  width: 100%; }
+
+label {
+  display: block;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: normal;
+  line-height: 1.8;
+  color: #0a0a0a; }
+  label.middle {
+	margin: 0 0 1rem;
+	padding: 0.5625rem 0; }
+
+.help-text {
+  margin-top: -0.5rem;
+  font-size: 0.8125rem;
+  font-style: italic;
+  color: #0a0a0a; }
+
+.input-group {
+  display: table;
+  width: 100%;
+  margin-bottom: 1rem; }
+  .input-group > :first-child {
+	border-radius: 7px 0 0 7px; }
+  .input-group > :last-child > * {
+	border-radius: 0 7px 7px 0; }
+
+.input-group-label, .input-group-field, .input-group-button {
+  margin: 0;
+  display: table-cell;
+  vertical-align: middle; }
+
+.input-group-label {
+  text-align: center;
+  padding: 0 1rem;
+  background: #e6e6e6;
+  color: #0a0a0a;
+  border: 1px solid #cacaca;
+  white-space: nowrap;
+  width: 1%;
+  height: 100%; }
+  .input-group-label:first-child {
+	border-right: 0; }
+  .input-group-label:last-child {
+	border-left: 0; }
+
+.input-group-field {
+  border-radius: 0;
+  height: 2.5rem; }
+
+.input-group-button {
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: center;
+  height: 100%;
+  width: 1%; }
+  .input-group-button a,
+  .input-group-button input,
+  .input-group-button button {
+	margin: 0; }
+
+.input-group .input-group-button {
+  display: table-cell; }
+
+fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0; }
+
+legend {
+  margin-bottom: 0.5rem;
+  max-width: 100%; }
+
+.fieldset {
+  border: 1px solid #cacaca;
+  padding: 1.25rem;
+  margin: 1.125rem 0; }
+  .fieldset legend {
+	background: #fefefe;
+	padding: 0 0.1875rem;
+	margin: 0;
+	margin-left: -0.1875rem; }
+
+select {
+  height: 2.4375rem;
+  padding: 0.5rem;
+  border: 1px solid #cacaca;
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  line-height: normal;
+  color: #0a0a0a;
+  background-color: #fefefe;
+  border-radius: 7px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="32" height="24" viewBox="0 0 32 24"><polygon points="0,0 32,0 16,24" style="fill: rgb%28138, 138, 138%29"></polygon></svg>');
+  background-size: 9px 6px;
+  background-position: right center;
+  background-origin: content-box;
+  background-repeat: no-repeat; }
+  @media screen and (min-width: 0\0) {
+	select {
+	  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAYCAYAAACbU/80AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIpJREFUeNrEkckNgDAMBBfRkEt0ObRBBdsGXUDgmQfK4XhH2m8czQAAy27R3tsw4Qfe2x8uOO6oYLb6GlOor3GF+swURAOmUJ+RwtEJs9WvTGEYxBXqI1MQAZhCfUQKRzDMVj+TwrAIV6jvSUEkYAr1LSkcyTBb/V+KYfX7xAeusq3sLDtGH3kEGACPWIflNZfhRQAAAABJRU5ErkJggg=="); } }
+  select:disabled {
+	background-color: #e6e6e6;
+	cursor: not-allowed; }
+  select::-ms-expand {
+	display: none; }
+  select[multiple] {
+	height: auto;
+	background-image: none; }
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  line-height: 1; }
+  [data-whatinput='mouse'] button {
+	outline: 0; }
+
+
+/* end form normalizations from Foundation */
+
+
+/****** Start CSS Animations *******/
+
+
+-webkit-@keyframes locationSuggestion {
+  15% {
+    -webkit-transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
+  }
+  30% {
+    -webkit-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
+  }
+}
+@keyframes locationSuggestion {
+  15% {
+    -moz-transform: translate3d(-20px, 0, 0);
+    transform: translate3d(-20px, 0, 0);
+  }
+  30% {
+    -moz-transform: translate3d(20px, 0, 0);
+    transform: translate3d(20px, 0, 0);
+  }
+  50% {
+    -moz-transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
+  }
+  100% {
+    -moz-transform: translate3d(-2px, 0, 0);
+    transform: translate3d(-2px, 0, 0);
+  }
+}
+
+-webkit-@keyframes helperSuggestion {
+  15% {
+   /* -webkit-transform: rotate(45deg) translate3d(-20px, 0, 0);
+    transform: rotate(45deg)  translate3d(-20px, 0, 0);*/
+    left: -36px;
+  }
+  30% {
+    /*-webkit-transform: rotate(45deg)  translate3d(20px, 0, 0);
+    transform: rotate(45deg)  translate3d(20px, 0, 0);*/
+    left: 45px;
+  }
+  50% {
+    /*-webkit-transform: rotate(45deg)  translate3d(-2px, 0, 0);
+    transform: rotate(45deg)  translate3d(-2px, 0, 0);*/
+    left: -1px;
+  }
+  100% {
+   /* -webkit-transform: rotate(45deg)  translate3d(-2px, 0, 0);
+    transform: rotate(45deg)  translate3d(-2px, 0, 0);*/
+    left: -1px;
+  }
+}
+@keyframes helperSuggestion {
+  15% {
+    /*-moz-transform: rotate(45deg)  translate3d(-20px, 0, 0);
+    transform: rotate(45deg) translate3d(-20px, 0, 0);*/
+    left: -36px;
+  }
+  30% {
+   /* -moz-transform: rotate(45deg)  translate3d(20px, 0, 0);
+    transform: rotate(45deg)  translate3d(20px, 0, 0);*/
+    left: 45px;
+  }
+  50% {
+    /*-moz-transform: rotate(45deg)  translate3d(-2px, 0, 0);
+    transform: rotate(45deg)  translate3d(-2px, 0, 0);*/
+    left: -1px;
+  }
+  100% {
+   /* -moz-transform: rotate(45deg)  translate3d(-2px, 0, 0);
+    transform: rotate(45deg)  translate3d(-2px, 0, 0);*/
+    left: -1px;
+  }
+}
+
+-webkit-@keyframes contentFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes contentFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+-webkit-@keyframes contentFadeOut {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes contentFadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+
+/* generic custom styles */
+* {
+  -webkit-font-smoothing: antialiased;
+}
+title:first-letter {
+   text-transform:capitalize;
+}
+
+body {
+  margin: 0;
+  /*padding-top: 3.2em;
+*/}
+
+.body-container {
+  overflow-x: hidden;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  /*position: fixed;*/
+  /*top: 0;
+  left: 0;*/
+}
+
+div {
+	color: #53708C;
+}
+p {
+	color: #888;
+	font-size: 16px;
+	margin: 0;
+	font-family:'Montserrat', sans-serif;
+}
+a {
+	color: #091521;
+	text-decoration: none;
+
+}
+a:hover {
+	color: #FFF;
+	-webkit-transition: color .25s;
+	-moz-transition: color .25s;
+  transition: color .25s;
+}
+
+/*loader overlay*/
+.loader-overlay {
+  /*display: block !important;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+ /* background:
+    radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;*/
+  background-color:#2B2A29;
+  /*background-size:16px 16px;*/
+  z-index: 1000;
+}
+
+@keyframes loadingBarsVertical {
+  to {
+    transform: scale(1, 0);
+  }
+}
+
+@keyframes loadingBarsHorizontal {
+  to {
+    transform: scale(0, 1);
+  }
+}
+
+.borderframe {
+    height: 17px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: #fff;
+    -moz-transition: background ease-in .2s;
+    -webkit-transition: background ease-in .2s;
+    -o-transition: background ease-in .2s;
+    transition: background ease-in .2s
+}
+.borderframe.bottom, 
+.borderframe.top {
+    background: 0 0;
+    animation: loadingBarsHorizontal 1s infinite ease-in-out alternate;
+}
+.borderframe.left, 
+.borderframe.right {
+    width: 17px;
+    height: 100%;
+    animation: loadingBarsVertical 1s infinite ease-in-out alternate;
+}
+.borderframe.right {
+    left: auto;
+    right: 0;
+    z-index: 102;    
+    /* transform: scale(1, 0) !important; */
+    transform-origin: top;
+}
+.borderframe.top {
+    transform-origin: left;
+}
+.borderframe.bottom {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    transform-origin: right;
+}
+.borderframe.left {
+    top: auto;
+    bottom: 0;
+    transform-origin: bottom;
+}
+.borderframe.bottom:after, 
+.borderframe.top:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.loader-overlay img {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  opacity: 0;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-animation: contentFadeIn .25s forwards;
+  animation: contentFadeIn 1s .5s forwards;
+  z-index: 900;
+}
+
+.vertical-center-wrapper {
+	display: block;
+	text-align: center;
+	box-sizing: border-box;
+}
+.vertical-center-wrapper:before { /*this CSS gives the 'vertical-center' div a reference to align to*/
+	content: '';
+	display: inline-block;
+	min-height: 100%;
+	vertical-align: middle;
+	margin-right: -0.5em; /*offsets this :before element*/
+}
+.vertical-center {
+	display: inline-block;
+	vertical-align: middle; /*maybe not needed: check after installing*/
+	height: auto;
+	text-align: center;
+}
+
+
+
+/****** Add Header CSS Here *******/
+header {
+  background-color: #ccc;
+}
+.header-wrapper {
+  margin: 0 auto;
+  border: 1px solid #888;
+}
+
+/****** Add Header Logo CSS Here *******/
+.site-logo {
+
+}
+
+/****** Add Header Header Nav Here *******/
+.header-nav {
+
+}
+
+/****** Add Header Main Nav Here *******/
+
+/* start proof of concept css*/
+.main-nav.fuel-menu {
+    position: fixed;
+    top: 0;
+    left: 20px;
+    width: calc(100% - 40px);
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    padding: .75em 0 1.25em;
+    background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-middle-bg.svg);
+    background-color: transparent;
+    background-size: auto 100%;
+    box-sizing: border-box;
+    z-index: 20;
+}
+
+.main-nav:before {
+    content: ' ';
+    width: 20px;
+    height: 50px;
+    background-color: #000;
+    background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-end-3.svg);
+    background-size: auto 100%;
+    position: absolute;
+    left: -20px;
+    top: 0;
+}
+.main-nav.fuel-menu:after {
+    content: ' ';
+    width: 20px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    right: -20px;
+    background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-end-3.svg);
+    transform: scaleX(-1);
+    z-index: 100;
+    background-size: auto 100%;
+    background-position: right bottom;
+}
+
+.main-nav a {
+	position: relative;
+  padding: .25em 1%;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+  font-size: 12px;
+	color: #2B2A29;
+	letter-spacing: 0.8px;
+  letter-spacing: 0;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+	transition: .25s;
+	/*font-family: 'Yellowtail', cursive;
+	font-family: 'Krona One', sans-serif;*/
+}
+.main-nav a:before {
+	content: ' ';
+	width: 3px;
+	height: 3px;
+	background-color: #C08339;
+	position: absolute;
+	left: -.3em;
+	top: .75em;
+}
+.main-nav a:first-child:before {
+	content: none;
+}
+.main-nav a:hover,
+.main-nav a.active {
+	color: #F05A28;
+}
+
+/*.contain-drag {
+	width: 100%;
+	box-sizing: border-box;
+	overflow-x: hidden;
+}*/
+
+/*mobile section title*/
+/*.section-nav {
+    position: fixed;
+    top: 200px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    -webkit-animation: contentFadeIn .25s ease-in .75s forwards;
+    -moz-animation: contentFadeIn .25s ease-in .75s forwards;
+    animation: contentFadeIn .25s ease-in .75s forwards;
+}
+.snapped .section-nav {
+    -webkit-animation: contentFadeOut .25s ease-in forwards;
+    -moz-animation: contentFadeOut .25s ease-in forwards;
+    animation: contentFadeOut .25s ease-in forwards;
+}*/
+.section-title,
+.content-title {
+  font-family: 'Krona One', sans-serif;
+  font-size: 24px;
+  color: #FFFFFF;
+  letter-spacing: 1.6px;
+  text-align: center;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+  text-transform: uppercase;
+}
+/*location controller*/
+.location-controller {
+    position: absolute;
+    top: 450px;
+    top: 110%;
+    width: 53px;
+    height: 53px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+    -webkit-transform: translate3d(-2px, 0 , 0);
+    -moz-transform: translate3d(-2px, 0 , 0);
+    transform: translate3d(-2px, 0 , 0);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    cursor: col-resize;
+}
+.location-controller.animate {
+    animation: locationSuggestion 1s 1.5s normal;
+    -webkit-animation-iteration-count: 3; /* Safari 4.0 - 8.0 */
+    animation-iteration-count: 3;
+}
+/*.controller-wrapper {
+	position: fixed;
+  top: 450px;
+	width: 100%;
+	display: block;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	text-align: center;
+	z-index: 10;
+}*/
+/*fuel menu octagon -alie*/
+.helper-text {
+  display: block;
+  position: fixed;
+  top: 395px;
+  left: 50%;
+  /*right: 0;*/
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  color: #2B2A29;
+  letter-spacing: 0.93px;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: .65em 1.25em;
+  text-align: center;
+  border-radius: 0;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  transition: .25s;
+}
+.helper-text.animate:before {
+    animation: helperSuggestion 1s 1.48s normal;
+    -webkit-animation-iteration-count: 3; /* Safari 4.0 - 8.0 */
+    animation-iteration-count: 3;
+}
+#split_gutter:hover .helper-text {
+  background-color: #F05A28;
+}
+.helper-text:before {
+  content: " ";
+  display: block;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: -7px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  transform: rotate(45deg);
+  z-index: -1;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  transition: .25s;
+}
+#split_gutter:hover .helper-text:before {
+  background-color: #F05A28;
+}
+.helper-text:after {
+    content: " ";
+    width: 98%;
+    height: 97%;
+    border: 2px solid rgba(240,90,40,1);
+    border-left: none;
+    border-top: none;
+    display: block;
+    z-index: -1;
+    position: absolute;
+    top: 1.5px;
+    left: 3px;
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    transition: .25s;
+}
+#split_gutter:hover .helper-text:after {
+    -webkit-transform: translate3d(-3.5px, -3px, 0);
+    -moz-transform: translate3d(-3.5px, -3px, 0);
+    transform: translate3d(-3.5px, -3px, 0);
+}
+.menu-wrapper {
+  top: 5%;
+  top: 95px;
+  position: fixed;
+  height: 300px;
+  z-index: 100;
+  width: 100%;
+  background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/fuel_menu.svg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat; 
+  max-width: 160px;
+  -webkit-transform: translate3d(-75px, 0, 0);
+  -moz-transform: translate3d(-75px, 0, 0);
+  transform: translate3d(-75px, 0, 0);
+}
+.fuel-menu {
+  padding-left: 0;
+  list-style: none;
+  height: auto;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 5.5em;
+}
+.fuel-menu .to-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  height: 80px;
+  /*background-color: rgba(0,0,0,.4);*/
+  cursor: pointer;
+}
+.fuel-menu li a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  color: #2B2A29;
+  letter-spacing: 0.85px;
+  display: inline-block;
+  padding: .75em 4em;
+  text-transform: uppercase;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  transition: .25s;
+  position: relative;
+}
+.fuel-menu li a:before,
+.fuel-menu li a:after {
+  content: '';
+  width: 20px;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  background-color: #F05A28;
+  opacity: 0;
+}
+.fuel-menu li a:before {
+  left: 15%;
+}
+.fuel-menu li a:after {
+  right: 15%;
+}
+.fuel-menu li a.active, 
+.fuel-menu li a:hover {
+  color: #F05A28;
+  position: relative;
+}
+.fuel-menu li a.active:before,
+.fuel-menu li a.active:after {
+  opacity: 1;
+  transition: .25s;
+}
+/****** Add Body Wrapper Here *******/
+/*.body-wrapper {
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 200%;
+  -webkit-transform: translate3d(-25%, 0 , 0);
+  -moz-transform: translate3d(-25%, 0 , 0);
+  transform: translate3d(-25%, 0 , 0);
+  transition: 0s;
+  padding: 0 10%;
+}*/
+
+#split_gutter,
+.gutter {
+  position: relative;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+/*.gutter:before {
+  content: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/location-controller.png);
+  width: 53px;
+  height: 53px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  bottom: 200px;
+  margin-left: -21.5px;
+}*/
+
+#split_gutter,
+.split.split-horizontal, 
+.gutter.gutter-horizontal {
+  height: 100%;
+  float: left;
+  min-height: 800px;
+}
+
+#split_gutter,
+.gutter.gutter-horizontal {
+  cursor: col-resize;
+  /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/grips/vertical.png);*/
+  /*background-color: #2B2A29;*/
+}
+
+.body-wrapper {
+  margin: 0 auto;
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  width: 100%;
+  /*transition: 0s;*/
+  background-color: #2B2A29;
+}
+
+.main-content {
+	width: calc(50% - 2.5px);
+	height: 100%;
+	overflow: hidden;
+  min-height: 800px;
+  display: block;
+	box-sizing: border-box;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	float: left;
+	position: relative;
+}
+.section-wrapper {
+  position: relative;
+  padding-top: 3em;
+  width: 100%;
+  min-width: 400px;
+  height: 100%;
+  min-height: 800px;
+  box-sizing: border-box;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  /*background-color: #f05a28;*/
+  background-color: #a9a9a9;
+  border-bottom: solid 1px #2B2A29;
+}
+.section-wrapper.extended {
+  min-height: 1100px;
+}
+.section-wrapper:first-child {
+  padding-top: 0;
+}
+.center-street {
+	/*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-home-center-1100.jpg);*/
+	/*left: 0;*/
+}
+.walkers-point {
+  /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/walkers-point-home.png);*/
+  /*right: 0;*/
+}
+/*center street backgrounds*/
+.center-street-header {
+  background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-home-center-1100.jpg);
+}
+.center-menu {
+    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-menu-center.jpg);*/
+    background-size: cover;
+    background-position: right center;
+}
+.center-plate {
+	position: absolute !important;
+	right: 40%;
+	bottom: -20%;
+	transform-origin: top;
+	-webkit-transition: .5s .5s ease-in-out;
+	-moz-transition: .5s .5s ease-in-out;
+	transition: .5s .5s ease-in-out;
+	filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
+}
+.center-plate.visible {
+	-webkit-transform: rotate(-45deg) translate3d(-20px, 0px, 0);
+	-moz-transform: rotate(-45deg) translate3d(-20px, 0px, 0);
+	transform: rotate(-45deg) translate3d(-20px, 0px, 0);
+}
+.featured-menu-img-slider .slick-track {
+	min-height: 475px;
+}
+.featured-menu-img-slider {
+	position: absolute !important;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+	bottom: -10%;
+}
+.featured-menu-img-slider .slick-track {
+	display: flex;
+	align-items: center;
+}
+.featured-menu-img-slider .featured-img {
+/* 	transform: translateY(50%); */
+	height: 100%;
+	min-height: 1px;
+}
+.featured-menu-img-slider .featured-img img {
+/* 	margin-top: 50%; */
+	display: inline-block;
+	vertical-align: middle;
+	transform-origin: left bottom;
+	padding: 0 50px;
+	-webkit-transition: .5s .5s ease-in-out;
+	-moz-transition: .5s .5s ease-in-out;
+	transition: .5s .5s ease-in-out;
+	filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
+}
+.featured-menu-img-slider.rtl-active .featured-img img {
+	transform-origin: right bottom;
+}
+.featured-menu-img-slider .featured-img.slick-active img {
+	-webkit-transform: rotate(-45deg) translate3d(-80px, 225px, 0);
+	-moz-transform: rotate(-45deg) translate3d(-80px, 225px, 0);
+	transform: rotate(-45deg) translate3d(-80px, 225px, 0);
+}
+.featured-menu-img-slider.rtl-active .featured-img.slick-active img {
+	-webkit-transform: rotate(45deg) translate3d(80px, 225px, 0);
+	-moz-transform: rotate(45deg) translate3d(80px, 225px, 0);
+	transform: rotate(45deg) translate3d(80px, 225px, 0);
+}
+.featured-menu-img-slider.visible .featured-img img,
+.featured-menu-img-slider.rtl-active.visible .featured-img img {
+	-webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+	-moz-transform: rotate(0deg) translate3d(0, 0, 0);
+	transform: rotate(0deg) translate3d(0, 0, 0);
+}
+.center-events {
+    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/center-events-bg.jpg);*/
+    background-size: cover;
+    background-position: right center;
+}
+.center-about {
+    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/center-about-bg.jpg);*/
+    background-size: cover;
+    background-position: right center;
+}
+.center-merch {
+    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/walker-mugs.png);*/
+    background-size: cover;
+    background-position: center center;
+}
+
+/*walkers point backgrounds*/
+.walkers-point-header {
+  background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-home-walkers-1100.jpg);
+  background-position: left center;
+}
+.walkers-menu {
+  /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-menu-walker.jpg);*/
+    background-size: cover;
+    background-position: left center;
+}
+.walker-plate {
+  position: absolute;
+  left: 40%;
+  bottom: -20%;
+  transform-origin: top;
+  -webkit-transition: .5s .5s ease-in-out;
+  -moz-transition: .5s .5s ease-in-out;
+  transition: .5s .5s ease-in-out;
+  filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
+}
+.walker-plate.visible {
+  -webkit-transform: rotate(5deg) translate3d(-120px, -70px, 0);
+  -moz-transform: rotate(5deg) translate3d(-120px, -70px, 0);
+  transform: rotate(5deg) translate3d(-120px, -70px, 0);
+}
+.walkers-events {
+    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-events-walkers-1100.jpg);*/
+    background-size: cover;
+    background-position: right center;
+}
+.walkers-about {
+    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/bg-about-walkers-1100.jpg);*/
+    background-size: cover;
+    background-position: 65% center;
+}
+.walkers-merch {
+    /*background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/walker-merch-front.png);*/
+    background-size: cover;
+    background-position: left center;
+}
+
+/*main-content overlay*/
+.photo_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.25);
+}
+.main-content .overlay {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	opacity: .7;
+	background-color: #000;
+  z-index: 10;
+}
+
+.side-tag {
+  display: block;
+  position: fixed;
+  top: 160px;
+  opacity: 0;
+  z-index: 200;  
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  transition: .25s;
+}
+.cs-tag.side-tag {
+  left: 0;
+  text-align: left;    
+  transform-origin: left;
+  -webkit-transform: rotate(-90deg) translate(-100px, 15px);
+  -moz-transform: rotate(-90deg) translate(-100px, 15px);
+  transform: rotate(-90deg) translate(-100px, 15px);
+}
+.wp-tag.side-tag {
+  right: 0;
+  transform-origin: right;
+  -webkit-transform: rotate(90deg) translate(100px, 15px);
+  -moz-transform: rotate(90deg) translate(100px, 15px);
+  transform: rotate(90deg) translate(100px, 15px);
+  text-align: right;
+}
+.snap-left .cs-tag {
+  opacity: 1;
+}
+.snap-right .wp-tag {
+  opacity: 1;
+}
+.side-tag.hide {
+  opacity: 0;
+}
+.side-tag p {
+  position: relative;
+  top: 0;
+  color: #b27b44;
+  text-align: left;
+  text-transform: uppercase;
+}
+.wp-tag.side-tag p {
+  text-align: right;
+}
+
+.location-logo, 
+.center-home-wrapper,
+.walker-home-wrapper {
+	position: relative;
+	top: 4em;
+	margin: 0 auto;
+	text-align: center;
+  z-index: 0;   
+/*	overflow: hidden;*/
+}
+.center-home-content,
+.walker-home-content {
+	padding-top: 2.5em;
+}
+/*.location-logo img {
+	
+	transform: translate3d(80%, 0 , 0);
+}*/
+.walkers-point .location-logo img {
+	/*margin-left:-150px;*/
+	/*transform: translate3d(-80%, 0 , 0);*/
+}
+
+.center-hours,
+.walkers-hours {
+  position: relative;
+  min-height: 300px;
+  background-color: #3B3A39;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+p.hours-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  color: #FFFFFF;
+  letter-spacing: 0.8px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+  text-transform: uppercase;
+  margin: 0 auto 1em;
+}
+
+.center-hours .center-home-wrapper,
+.walkers-hours .center-home-wrapper {
+    top: 2em;
+}
+
+/* end proof of concept css*/
+
+/*WYSIWYG styles- alie*/
+.small-caps-title, 
+.small-caps-meta {
+	font-family: 'Krona One', sans-serif;
+	text-transform: uppercase;
+	font-size: 12px;
+	letter-spacing: 0.8px;
+	text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+	color: #FFFFFF;
+  position: relative;
+}
+.small-caps-title {
+  margin-bottom: 2em;
+}
+.center-street .small-caps-title::after,
+.walkers-point .small-caps-title::after {
+    content: '';
+    width: 50%;
+    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/paint_swish_thick.png);
+    position: absolute;
+    bottom: 0;
+    background-size: 100%;
+    left: 0;
+    right: 0;
+    margin: 10px auto 0;
+    top: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    height: 100%;
+    filter: drop-shadow(0px 2px 0px #000);
+}
+
+.center-street .small-caps-title:nth-child(odd)::after {
+    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/paint_swish_thin.png);
+}
+.walkers-point .small-caps-title:nth-child(even)::after {
+    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/paint_swish_thin.png);
+}
+.medium-text {
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	margin: .5em auto;
+	text-shadow: 0 2px 6px #000;
+	font-size: 14px;
+	letter-spacing: 0;
+	text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+  margin: .25em auto;
+
+}
+.small-bold-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+}
+.cafe-info-title {
+	font-family: 'Krona One', sans-serif;
+	font-size: 12px;
+	color: #2B2A29;
+	letter-spacing: 0.8px;
+	text-transform: uppercase;
+	margin: .75em 0 .15em;
+}
+.cafe-info-content {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 10px;
+	color: #2B2A29;
+	letter-spacing: 0.66px;
+	text-transform: uppercase;
+}
+.cafe-info-content a:hover,
+.cafe-info-content a:focus {
+	color: #091521;
+	outline: none;
+}
+/*menu page text*/
+.italic-title {
+  font-family: 'Yellowtail', cursive;
+  font-size: 24px;
+  color: #FFFFFF;
+  letter-spacing: 1.6px;
+  font-weight: 300;
+  margin: 0 auto;
+}
+.small-orange-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: #F05A28;
+  letter-spacing: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+}
+.big-menu-title,
+.medium-caps-title  {
+  font-family: 'Krona One', sans-serif;
+  font-size: 24px;
+  color: #FFFFFF;
+  letter-spacing: 3px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+  text-transform: uppercase;
+  font-weight: 300;
+  margin: .5em 0;
+  line-height: 30px;
+  position: relative;
+}
+.big-menu-title::after,
+.medium-caps-title::after  {
+    content: '';
+    width: 60%;
+    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/big_fill_line.svg);
+    position: absolute;
+    bottom: 0;
+    background-size: 100%;
+    left: 0;
+    right: 0;
+    margin: 10px auto 0;
+    top: 100%;
+    background-repeat: no-repeat;
+    display: block;
+    /*height: 35%;*/
+    height: 25px;
+}
+.center-street .big-menu-title:nth-child(odd)::after,
+.center-street .medium-caps-title:nth-child(odd)::after {
+    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/paint_swish_thin.png);
+}
+.walkers-point .big-menu-title:nth-child(even)::after,
+.walkers-point .medium-caps-title:nth-child(even)::after {
+    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/paint_swish_thin.png);
+}
+.medium-caps-title {
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 24px;
+  margin: 0 auto 1.75em;
+}
+.medium-caps-title::after {
+  top: 80%;
+}
+.medium-white-text,
+.small-white-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+  margin: 1em auto; 
+}
+.small-white-text {
+  font-size: 13px;
+  line-height: 14px;
+}
+.classic-button, 
+.newspaper-button {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: #2B2A29;
+  letter-spacing: 0.93px;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  margin: 0 auto;
+  padding: .65em 1.25em;
+  display: inline-block;
+  vertical-align: middle; /*maybe not needed: check after installing*/
+  text-align: center;
+  position: relative;
+}
+.classic-button::after, 
+.newspaper-button::after {
+  content: " ";
+  width: 98%;
+  height: 97%;
+  border: 2px solid rgba(240,90,40,1);
+  display: block;
+  z-index: -1;
+  position: absolute;
+  top: 1.5px;
+  left: 3px;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  transition: .25s;
+}
+.newspaper-button {
+  width: 100px;
+  padding: 1em 0;
+}
+a.newspaper-button:hover,
+a.classic-button:hover {
+  /*color: #F05A28;*/
+  background-color: #F05A28; 
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  transition: .25s;
+}
+
+.classic-button:hover::after,
+.newspaper-button:hover::after {
+  -webkit-transform: translate3d(-3.5px, -3px, 0);
+  -moz-transform: translate3d(-3.5px, -3px, 0);
+  transform: translate3d(-3.5px, -3px, 0);
+}
+
+.newspaper-background {
+/*   background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/newspaper_png.png); */
+  background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/fuel-menu-bg.jpg);
+  background-size: 65px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  min-width: 85px;
+  background-position: center;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  /*z-index: -1;*/
+  margin-right: 1em;
+  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 1));
+}
+.events-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  font-size: 16px;
+  color: #F05A28;
+  letter-spacing: 1.57px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+.social-media-icon {
+  color: #ffffff;
+  font-size: 20px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.50);
+  margin-right: 0.5em;
+}
+.made-in-mke {
+  font-family: 'Yellowtail', cursive;
+  font-size: 20px;
+  color: #FFFFFF;
+  letter-spacing: 1.33px;
+  position: relative;
+  z-index: 0;
+}
+.made-in-mke::after {
+  content: ' ';
+  background-image: url('/web/20180313052244im_/http://www.fuelcafe.com/assets/images/mke_heart.svg');
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+  left: 25%;
+}
+/*******end of wysiwyg *******/
+.newspaper-background:before { 
+  content: '';
+  display: inline-block;
+  height: 100%;
+  min-height: 100px;
+  vertical-align: middle;
+  margin-right: -0.5em; 
+}
+/*******center street - alie ********/
+.date-and-time {
+	display: inline-block;
+  width: 100%;
+  max-width: 275px;
+  padding: 1em 0;
+	background: rgba(0,0,0,0.48);
+	box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	outline: 1px solid #FFFFFF;
+	outline-offset: -5px;
+}
+.center-street-container, 
+.center-address, 
+.walker-address, 
+.walker-point-container {
+  margin: 0 auto;
+  box-sizing: border-box;
+  width: 66.67%;
+}
+.fixed-address {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 0px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.center-address, 
+.walker-address {
+  height: 45px;
+  /*bottom: 2em;*/
+  bottom: 1em;
+  position: fixed;
+  display: inline-block;
+  /*z-index: 15;*/
+  width: auto;
+  padding-right: 20px;
+  text-align: center;
+  -webkit-transform: translate3d(-45%, 0, 0);
+  -moz-transform: translate3d(-45%, 0, 0);
+  transform: translate3d(-45%, 0, 0);
+}
+/*// cafe info octagons*/
+/*.walker-address,
+.walker-point-container {
+  margin-left: 17.5%;
+}*/
+.center-address-text,
+.walker-address-text {
+  height: 100%;
+  width: 240px;
+  margin: 0;
+  position: relative;
+  background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/octagon-svg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.cafe-footer-text {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+/*end of octagons */
+/********MENU CSS**********/
+.center-menu {
+  width: 100%;
+  min-height: 800px;
+  height: 100%;
+  text-align: center;
+}
+/*.secondary-logo {
+  position: relative;
+  top: 2em;
+  text-align: center;
+  margin: 0 auto;
+}*/
+.secondary-logo {
+  position: absolute;
+  top: 2em;
+  left: -19px;
+  right: 0;
+  text-align: center;
+  margin: 0 auto;
+  z-index: 10;
+  -webkit-transition: left .25s;
+  -moz-transition: left .25s;
+  transition: left .25s;
+}
+.set-left .center-street .secondary-logo {
+  left: -270px;
+}
+.secondary-logo img {
+  position: fixed;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  transition: .25s;
+  -webkit-transform: translate3d(-48%, -160px, 0);
+  -moz-transform: translate3d(-48%, -160px, 0);
+  transform: translate3d(-48%, -160px, 0);
+  max-width: 80%;
+}
+.secondary-logo.show img {
+  -webkit-transform: translate3d(-48%, 0, 0);
+  -moz-transform: translate3d(-48%, 0, 0);
+  transform: translate3d(-48%, 0, 0);
+}
+.content-wrapper {
+  min-width: 360px;
+  width: 66.67%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.menu-button-space {
+  padding-top: 2em;
+}
+/*sets max width for centering ect.*/
+.max-275 {
+  max-width: 275px;
+}
+/*************EVENTS CSS************/
+.weekly-special-block {
+  display: inline-block;
+  vertical-align: top;
+/*  float: left;*/
+  box-sizing: border-box;
+  max-width: 180px;
+  margin-left: -.25em;
+}
+/****** Carousel CSS Auto-embed - site specific area *******/
+/****** Carousel CSS Auto-embed - Base Styles *******/
+
+/* Slick Base Carousel -- http://kenwheeler.github.io/slick/ -- do not change below */
+.event-slider {
+  margin-top: 10%;
+}
+.short-description-text {
+  display: inline-block;
+  margin-bottom: 1em;
+  max-width: 275px;
+}
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-touch-callout: none;
+    -khtml-user-select: none;
+    -ms-touch-action: pan-y;
+        touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list:focus {
+    outline: none;
+}
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+.slick-slider .slick-track, .slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after {
+    display: table;
+    content: '';
+}
+.slick-track:after {
+    clear: both;
+}
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+.slick-slide {
+    display: none;
+    float: left;
+
+    height: 100%;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+.slick-slide img {
+    display: block;
+}
+.slick-slide.slick-loading img {
+    display: none;
+}
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+/* Arrows */
+.slick-prev, .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+    z-index: 100;
+}
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus {
+    color: transparent;
+    outline: none;
+    background: transparent;
+}
+.slick-prev:hover:before, .slick-prev:focus:before, .slick-next:hover:before, .slick-next:focus:before {
+    opacity: 1;
+}
+.slick-prev.slick-disabled:before, .slick-next.slick-disabled:before {
+    opacity: .25;
+}
+
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 20px;
+    line-height: 1;
+    opacity: .75;
+    color: #F05A28 ;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+    left: 5%;
+}
+[dir='rtl'] .slick-prev {
+    right: 25px;
+    left: auto;
+}
+.slick-prev:before {
+    content: '\f104';
+    font-family: 'FontAwesome';
+    font-size: 30px;
+}
+[dir='rtl'] .slick-prev:before {
+    content: '\f105';
+    font-family: 'FontAwesome';
+    font-size: 30px;
+}
+
+.slick-next {
+    right: 5%;
+}
+[dir='rtl'] .slick-next {
+    right: auto;
+    left: -25px;
+}
+.slick-next:before {
+    content: '\f105';
+    font-family: 'FontAwesome';
+    font-size: 30px;
+}
+[dir='rtl'] .slick-next:before {
+    content: '\f104';
+    font-family: 'FontAwesome';
+    font-size: 30px;
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+    /*margin-bottom: 30px;*/
+}
+.slick-dots {
+    position: absolute;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+}
+.slick-dots li button {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    cursor: pointer;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover, .slick-dots li button:focus {
+    outline: none;
+}
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+    opacity: 1;
+}
+.slick-dots li button:before {
+    font-family: 'arial', sans-serif;
+    font-size: 48px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .25;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+}
+/* End Slick Base Carousel -- do not change above */
+
+/****** End Carousel CSS Auto-embed - Base Styles *******/
+/****** Carousel CSS Auto-embed - site specific area *******/
+
+/* Slick more site defined additions -- change if necessary below */
+
+.slick-loading .slick-list
+{
+    /*background: #fff url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/ajax-loader.gif') center center no-repeat;*/
+}
+
+/* Icons */
+/*
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/fonts/slick.eot');
+    src: url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/fonts/slick.eot#iefix') format('embedded-opentype'), url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/fonts/slick.woff') format('woff'), url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/fonts/slick.ttf') format('truetype'), url('/web/20180313052244im_/http://www.fuelcafe.com/assets/css/fonts/slick.svg#slick') format('svg');
+}
+*/
+
+/* End Slick more site defined additions -- change if necessary below */
+.byte-logo-carousel .slick-dots li button:before {
+    color: black;
+}
+.byte-logo-carousel .slick-dots li.slick-active button:before {
+    color: black;
+}
+
+/* Carousel content styling, including any Slick changes to dots, arrows, etc. */
+/* Carousel content styling, including any Slick changes to dots, arrows, etc. */
+.byte-parent-logo-carousel {
+    position: relative;
+    height: 125px;
+    width: 100%;
+    margin-top: 10%;
+}
+.byte-logo-carousel {
+    width: 100%;
+    height: 125px;
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.byte-parent-logo-carousel .slick-dots {
+    bottom: -25px;
+}
+.byte-parent-logo-carousel .slick-track {
+    /*height: ;*/
+}
+.byte-logo-carousel-pane {
+  box-sizing: border-box;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+  padding: 0 2em;
+}
+.byte-logo-carousel-pane .byte-carousel-text h3 {
+    color: white;
+    font-size: 28px;
+    font-family: "Montserrat", sans-serif
+}
+.byte-logo-carousel-pane .byte-carousel-text {
+    position: absolute;
+    width: 40%;
+    right: 25px;
+    bottom: 75px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
+    font-weight: 100;
+    line-height: 26px;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+    color: white;
+}
+.byte-logo-carousel-pane .byte-carousel-link {
+    display: block;
+    width: 225px;
+    text-decoration: none;
+    padding: 10px;
+    background-color: #091933;
+    color: white;
+}
+
+.byte-parent-logo-carousel.is-hidden-fade {
+    opacity: 0;
+}
+.byte-parent-logo-carousel.is-visible-fade {
+    opacity: 1;
+    -webkit-transition: opacity .5s;
+    -moz-transition: opacity .5s;
+    transition: opacity .5s;
+}
+
+.byte-logo-carousel-pane img {
+    width: 275px;
+}
+.byte-logo-carousel-pane img {
+    max-width: 150px;
+}
+/* events slider */
+.event-callout {
+    background-color: rgba(0,0,0,0.48);
+    padding: 1em;
+    box-sizing: border-box;
+    outline: 1px solid #FFFFFF;
+    outline-offset: -5px;
+    text-align: center;
+    position: absolute;
+    bottom: 1.5em;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: calc(100% - 2em);
+    max-width: 527px;
+}
+.event-callout .byte-parent-logo-carousel {
+    height: 175px;
+/*     margin-top: 4em; */
+}
+/*social media*/
+#social,
+#walksers_social {
+  padding-top: 0;
+}
+.social-container {
+  background-color: #2B2A29;
+  width: 100%;
+  height: 800px;
+  display: block;
+}
+.social-container iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* End Carousel content styling, including any Slick changes to dots, arrows, etc. */
+
+/****** End Carousel CSS Auto-embed - site specific area *******/
+
+
+/****** End Carousel CSS Auto-embed - site specific area *******/
+
+/****** Add Footer CSS Here *******/
+footer {
+    background-color: #272726;
+    overflow: hidden;
+    padding: .25em 0em;
+    box-sizing: border-box;
+}
+
+.footer-credits {
+  padding-top: .5em;
+}
+.footer-credits div {
+    text-align: center;
+    padding: 1em 0 0;
+    /*padding: .5em 0;*/
+    /*margin-bottom: .5em;*/
+    box-sizing: border-box;
+}
+.footer-credits > div > a {
+  margin: 0 .25em .5em;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  transition: .25s;
+}
+.footer-credits > div > a:hover {
+  opacity: .7;
+}
+p.footer-right {
+  color: #fff;
+  font-size: 14px;
+}
+.footer-right a {
+  color: #C08339;
+}
+
+/****** Add Campaign CSS Here *******/
+
+/****** Add Buckets CSS Here *******/
+
+/****** Add Email Signup Form CSS Here *******/
+
+/****** Add Calendar CSS Here *******/
+
+/****** Add Mobile Menu CSS Here *******/
+
+/****** Add Context Menu CSS Here *******/
+
+/****** Add Footer Menu CSS Here *******/
+
+/****** Add Forms CSS Here *******/
+
+
+/****** Add Specific Site, Page CSS Content, Tools Here *******/
+
+
+/* drawer campaign css */
+
+
+.line {
+/*   display: none; */
+  position: fixed;
+/*   top: 0; */
+  width: 5px;
+  background-color: #2B2A29;
+  height: 100vh;
+  margin: 0 auto;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 1px solid #fff;
+  border-top: none;
+  border-bottom: none;
+}
+.content-drawer {
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+margin: 0 auto;
+/*          width: calc(100% - 10px); */
+width: 100%;
+min-height: 400px;
+background-color: #fff;
+z-index: 200;
+padding: 2em 0 1em;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+-webkit-transform: translateY(-110%);
+        transform: translateY(-110%);
+  -webkit-transition: .25s ease;
+  transition: .25s ease;
+}
+.content-drawer:before {
+content: ' ';
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -12px;
+  left: 9px;
+-webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+}
+.content-drawer:after {
+content: ' ';
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -12px;
+  right: 9px;
+-webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+z-index: -1;
+}
+.content-drawer.open {
+-webkit-transform: translateY(0);
+        transform: translateY(0);
+}
+.drawer-border-left {
+position: absolute;
+top: 0;
+left: 0;
+width: 5px;
+height: calc(100% - 5px);
+border-right: solid 2px #2B2A29;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+background-color: #fff;
+-webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+box-sizing: border-box;
+background-color: #fff;
+}
+.drawer-border-left:before {
+  content: ' ';
+  width: 5px;
+  background-color: #fff;
+  border-right: solid 2px #2B2A29;
+  position: absolute;
+  bottom: -30px;
+  left: 12px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  z-index: 100;
+  height: 38px;
+}
+.drawer-border-right {
+position: absolute;
+top: 0;
+right: 0;
+width: 5px;
+height: calc(100% - 5px);
+border-left: solid 2px #2B2A29;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+background-color: #fff;
+-webkit-transform: translateX(100%);
+        transform: translateX(100%);
+}
+.drawer-border-right:before {
+  content: ' ';
+  width: 5px;
+  background-color: #fff;
+  border-left: solid 2px #2B2A29;
+  position: absolute;
+  bottom: -30px;
+  right: 12px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  z-index: 100;
+  height: 38px;
+}
+.drawer-border-bottom {
+position: absolute;
+bottom: 0;
+left: 0;
+right: 0;
+margin: 0 auto;
+  width: calc(100% - 44px);
+  height: 17px;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+background-color: #fff;
+-webkit-transform: translateY(100%);
+        transform: translateY(100%);
+}
+.drawer-border-bottom:before {
+position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  content: '';
+  width: calc(100%);
+  height: 5px;
+  border-top: solid 2px #2B2A29;
+  background-color: #fff;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  right: 0;
+  margin: 0 auto;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+.drawer-wrapper {
+max-width: 1024px;
+min-height: 300px;
+margin: .5em auto;
+padding: 0 5%;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+}
+.drawer-tabs {
+/*          background-color: #53708C; */
+min-height: 300px;
+}
+
+@-webkit-keyframes fadeInTab {
+to {
+  opacity: 1;
+}
+}
+
+@keyframes fadeInTab {
+to {
+  opacity: 1;
+}
+}
+.tab-content {
+opacity: 0;
+position: absolute;
+top: 2em;
+left: 0;
+right: 0;
+margin: 0 auto;
+/*          transform: translateY(-50%); */
+width: 100%;
+min-height: 200px;
+/*          background-color: gray; */
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+padding: 0 4em 0;
+-webkit-transition: opacity .25s;
+transition: opacity .25s;
+z-index: 0;
+}
+.tab-content.highlighted {
+opacity: 1;
+-webkit-animation: fadeInTab .25s .5s forwards;
+        animation: fadeInTab .25s .5s forwards;
+z-index: 1;
+}
+.tab-content p {
+/* Interested in Fuel a: */
+font-family: Montserrat-Regular;
+font-size: 11px;
+color: #414141;
+line-height: 16px;
+}
+.tab-content p.medium-text {
+font-size: 16px;
+text-shadow: none;
+}
+.tab-content ul { 
+/*          padding-left: 0; */
+}
+.tab-content li {
+list-style: circle;
+font-family: Montserrat-Regular;
+font-size: 16px;
+color: #414141;
+  line-height: 1.5em;
+  text-shadow: none;
+  margin-bottom: 1em;
+}
+footer {
+position: relative;
+}
+
+/* drawer image carousel*/
+.image-carousel {
+/*        opacity: 0; */
+-webkit-transition: .25s;
+transition: .25s;
+}
+.image-carousel.slick-initialized {
+opacity: 1;
+}
+.carousel-item {
+position: relative;
+height: 291px;
+background-size: cover;
+background-repeat: no-repeat;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+border: solid 2px #2B2A29;
+width: 357px;
+max-width: 100%;
+margin: 0 .5em;
+}
+.tab-content p.item-caption {
+position: absolute;
+bottom: 1em;
+left: 0;
+right: 0;
+margin: 0 auto;
+background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/caption-bg.svg);
+background-size: contain;
+background-repeat: no-repeat;
+  width: 147px;
+  height: 70px;
+font-size: 14px;
+color: #414141;
+text-align: center;
+padding: 18px 1em 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.drawer-arrow {
+position: absolute;
+bottom: 0;
+cursor: pointer;
+left: 50%;
+-webkit-transform: translateX(50%);
+        transform: translateX(50%);
+}
+.drawer-arrow .fa {
+  color: #f05a28;
+}
+
+.drawer-arrow.prev {
+/*        left: 2em; */
+left: 50%;
+-webkit-transform: translateX(-140%);
+        transform: translateX(-140%);
+}
+/*
+.drawer-arrow.next {
+right: 2em;
+}
+*/
+
+.drawer-arrow p {
+-webkit-transition: .25s;
+transition: .25s;
+  text-transform: uppercase;
+color: #2B2A29;
+}
+.drawer-arrow:hover p {
+color: #888;
+}
+
+.close-drawer {
+  position: absolute;
+  top: 2em;
+  left: 3em;
+  color: #f05a28;
+/*          text-shadow: 1px 1px 1px rgba(0,0,0,.8); */
+  cursor: pointer;
+  z-index: 10;
+top: auto;
+bottom: 0;
+left: 0;
+right: 0;
+text-align: center;
+margin: 0 auto;
+width: 70px;
+-webkit-transition: .25s;
+transition: .25s;
+border-right: 1px solid #f05a28;
+border-left: 1px solid #f05a28;
+}
+.close-drawer .fa {
+display: none;
+}
+.close-drawer p {
+  font-family: "Montserrat";
+  text-transform: uppercase;
+    color: #f05a28;
+    -webkit-transition: .25s;
+    transition: .25s;
+}
+.close-drawer:hover p {
+text-shadow: none;
+color: #2b2a29;
+}
+
+/* drawer-menu */
+.drawer-menu a {
+display: block;
+font-family: "Montserrat";
+font-size: 11px;
+color: #414141;
+letter-spacing: 0.7px;
+max-width: 120px;
+width: 100%;
+margin: 0 auto;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+/*          padding: 0 1em; */
+cursor: pointer;
+text-align: center;
+text-transform: uppercase;
+}
+.drawer-menu a:focus {
+outline: none;
+}
+.drawer-menu {
+/*   top: 0; */
+  position: fixed;
+  height: 85px;
+background-image:url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/drawer-tab.svg);
+  background-size: 100% 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  width: 160px;
+  max-width: 160px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1em 1.25em 0;
+  -webkit-transform: translateX(-75px) translateY(-100%);
+          transform: translateX(-75px) translateY(-100%);
+  -webkit-transition: .25s ease;
+  transition: .25s ease;
+  z-index: 210;
+}
+.drawer-menu.slick-initialized {
+  -webkit-transform: translateX(-75px) translateY(0);
+          transform: translateX(-75px) translateY(0);
+}
+
+/*
+@keyframes nudgeDown {
+85% {
+  top: 105px
+}
+100% {
+  top: 100px;
+}
+}
+*/
+.drawer-menu.slick-initialized + .menu-wrapper {
+/*          animation: nudgeDown .5s .15s forwards; */
+top: 100px;
+}
+
+.drawer-menu .slick-dots {
+bottom: 1em;
+left: 0;
+  right: 0;
+}
+.drawer-menu .slick-dots li {
+width: 5px;
+height: 5px;
+margin: 0 .5em;
+}
+.drawer-menu .slick-dots li button {
+background-color: gray;
+border-radius: 50%;
+width: 5px;
+height: 5px;
+-webkit-transition: .25s;
+transition: .25s;
+}
+.drawer-menu .slick-dots li[aria-hidden="false"] button,
+.drawer-menu .slick-dots li button:hover {
+background-color: #2B2A29;
+}
+
+/* active drawer */
+.active-drawer .drawer-menu {
+/* top: 417px; */
+transform: translate3d(-75px, 417px, 0)
+}
+.menu-wrapper {
+-webkit-transition: top .25s ease;
+transition: top .25s ease;
+}
+.active-drawer .menu-wrapper,
+.active-drawer .drawer-menu.slick-initialized + .menu-wrapper {
+top: 512px;
+}
+
+/* drawer slides */
+.drawer-tabs .slick-prev {
+left: 0;
+-webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+}
+.drawer-tabs .slick-next {
+right: 0;
+-webkit-transform: translateX(100%);
+        transform: translateX(100%);
+}
+
+/* drawer image carousel */
+.image-carousel .slick-prev {
+	left: 1%;
+}
+.image-carousel .slick-next {
+	right: 1%;
+}
+.image-carousel .slick-prev,
+.image-carousel .slick-next {
+-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+	background-color: rgba(255,255,255,.7);
+	width: 30px;
+	height: 30px;
+	border-radius: 0;
+	transition: .25s;
+}
+.image-carousel .slick-prev:hover {
+-webkit-transform: translateY(-50%) translateX(-2px);
+	transform: translateY(-50%) translateX(-2px);
+	background-color: #fff;
+}
+.image-carousel .slick-next:hover {
+-webkit-transform: translateY(-50%) translateX(2px);
+	transform: translateY(-50%) translateX(2px);
+	background-color: #fff;
+}
+
+/* wysiwyg */
+.content-drawer h3.content-title {
+font-size: 16px;
+color: #2B2A29;
+text-shadow: none;
+text-align: left;
+margin-bottom: .5em;
+}
+
+/* form styles */
+.content-drawer form {
+margin: 1em auto 0;
+text-align: center;
+}
+.content-drawer .field-row {
+text-align: left;
+}
+.content-drawer label {
+font-family: "Montserrat", sans-serif;
+font-size: 10px;
+color: #414141;
+text-transform: uppercase;
+}
+.content-drawer input {
+font-family: "Montserrat", sans-serif;
+border: 1px solid #979797;
+-webkit-box-shadow: inset 0.5px 0.5px 2px 0 rgba(0,0,0,0.50);
+        box-shadow: inset 0.5px 0.5px 2px 0 rgba(0,0,0,0.50);
+border-radius: 2px;
+height: 30px;
+}
+.content-drawer .g-recaptcha {
+  display: block;
+  width: 50%;
+    margin: 0 auto;
+}
+.content-drawer [type="submit"],
+.success-button {
+position: relative;
+background: transparent;
+border-radius: 0;
+border: none;
+border-right: solid 1px #414141;
+border-left: solid 1px #414141;
+-webkit-box-shadow: none;
+        box-shadow: none;
+font-size: 16px;
+color: #414141;
+text-transform: uppercase;
+text-align: center;
+    margin: 0 auto;
+    -webkit-transition: .25s;
+    transition: .25s;
+    padding: 0 .75em;
+    height: auto;
+}
+.content-drawer [type="submit"]:hover,
+.success-button:hover {
+cursor: pointer;
+color: rgba(240,90,40,1);
+border-color: rgba(240,90,40,1);
+}
+.content-drawer [type="submit"]:before,
+.success-button:before {
+position: absolute;
+bottom: 0;
+left: 0;
+content: '';
+width: 30px;
+height: 8px;
+-webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+/*          border-right: solid 1px #414141; */
+border-top: solid 1px #414141;
+-webkit-transition: border-color .25s;
+transition: border-color .25s;
+}
+.content-drawer [type="submit"]:after,
+.success-button:after {
+position: absolute;
+bottom: 0;
+right: 0;
+content: '';
+width: 30px;
+height: 8px;
+-webkit-transform: translateX(100%);
+        transform: translateX(100%);
+/*          border-left: solid 1px #414141; */
+border-top: solid 1px #414141;
+-webkit-transition: border-color .25s;
+transition: border-color .25s;
+}
+.content-drawer [type="submit"]:hover:before,
+.success-button:hover:before,
+.content-drawer [type="submit"]:hover:after,
+.success-button:hover:after {
+border-color: rgba(240,90,40,1);
+}
+
+/* drawer mobile nav */
+.drawer-mobile-menu {
+display: block;
+width: 100%;
+width: calc(100% - 40px);
+height: 51px;
+background-color: #fff;
+  background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-middle-bg.svg);
+  background-color: transparent;
+    background-size: auto 100%;
+position: fixed;
+/*          top: -2px; */
+top: 26px;
+left: 0;
+right: 0;
+margin: 0 auto;
+z-index: 20;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: none;
+}
+.drawer-mobile-menu:before {
+  content: ' ';
+  width: 20px;
+  height: 50px;
+  background-color: #000;
+  background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-end-3.svg);
+  background-size: auto 100%;
+  position: absolute;
+  left: -20px;
+  top: 0;
+}
+.drawer-mobile-menu:after {
+  content: ' ';
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: -20px;
+  background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/label-end-3.svg);
+  -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+  z-index: 100;
+  background-size: auto 100%;
+  background-position: right bottom;
+}
+.tab-nav-wrapper {
+max-width: 250px;
+width: 100%;
+height: calc( 50px - .5em);
+position: relative;
+margin: 0 auto;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+/*          padding-top: .75em; */
+}
+.drawer-mobile-menu a {
+display: block;
+font-family: "Montserrat";
+font-size: 11px;
+color: #414141;
+letter-spacing: 0.7px;
+width: 250px;
+/*          width: auto; */
+margin: 0 auto;
+-webkit-box-sizing: border-box;
+        box-sizing: border-box;
+padding: 2.3em 2em 1em;
+cursor: pointer;
+text-align: center;
+opacity: .8;
+-webkit-transition: padding .25s;
+transition: padding .25s;
+text-transform: uppercase;
+}
+.drawer-mobile-menu a:focus {
+outline: none;
+}
+.main-nav-wrapper.second-pos .main-nav.fuel-menu {
+top: 36px;
+top: -2px;
+-webkit-transition: .25s;
+transition: .25s;
+}
+
+/*insta slider*/
+.insta-slider {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: calc(100% - 1em);
+  margin: 0 auto;
+  /* flex-direction: column; */
+  /* max-width: 527px; */
+}
+.insta-photo {
+  width: 190px;
+  max-width: calc(33% - .25em);
+  margin: .5em 0 0;
+}
+.insta-photo img {
+width: 100%;
+}
+
+/****** Add WYSIWYG / Body Content CSS Here *******/
+
+h1 {
+  color: #091521;
+  margin: 0;
+  padding: 20px 0 20px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 24px;
+  line-height: 17px;
+  letter-spacing: .05em;
+}
+h3 {
+  color: #333;
+  font-size: 16px;
+  margin: 0;
+  font-family:'Montserrat', sans-serif;
+}
+
+.blockquote {
+  display: block;
+  font-family:'Montserrat', sans-serif;
+  color:  #0c437a;
+  font-size: 17px;
+  font-style: italic;
+  margin-left: 2em;
+  padding-left: 1.5em;
+  border-left: solid 3px #c5d9ec;
+  line-height: 28px;
+  quotes: none;
+}
+
+.img_right_25,
+.img_left_25,
+.img_right_50,
+.img_left_50 {
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.img_full_width {
+  width: 100%;
+  float: none;
+  margin-bottom: 1em;
+}
+.mobile-only {
+  display: none;
+}
+.desktop-only {
+  display: block;
+}
+
+/*responsive video CSS*/
+.embeddedContent {
+  position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 48.75%;
+    padding-top: 25px;
+    margin: 0 auto 1em;
+}
+.embeddedContent iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+
+/*SEARCH PATTERN STYLES*/
+
+
+
+
+/* Specific Screen Sizes from Foundation */
+
+/* Small only */
+/* @media screen and (max-width: 39.9375em) { */
+@media screen and (max-width: 749px) {
+
+	/* to disable touch panning / scrolling */
+	html,body {
+		overflow-x: hidden;
+	}
+	body {
+		/*position: relative;*/
+	/*padding-top: 2em;*/
+	
+	}
+	.grid-w-gutters .column + .column {
+		margin-left: 0;
+	}
+	.grid, .grid-w-gutters { width: 95%; }
+	/* standard stuff for small only screen */
+	.s-one { width: 8.33%; }
+	.s-two { width: 16.66%; }
+	.s-three { width: 25%; }
+	.s-four { width: 33.33%; }
+	.s-five { width: 41.66%; }
+	.s-six { width: 50%; }
+	.s-seven { width: 58.33%; }
+	.s-eight { width: 66.66%; }
+	.s-nine { width: 75%; }
+	.s-ten { width: 83.33%; }
+	.s-eleven { width: 91.66%; }
+	.s-twelve { width: 100% !important; }
+	
+	.s-text-left { text-align: left; }
+	.s-text-right { text-align: right; }
+	.s-text-center { text-align: center; }
+	.s-text-justify { text-align: justify; }
+	
+	/****** Add Site CSS Content, Tools for Small Here *******/
+  .body-wrapper {
+    width: 200%;
+    -webkit-transform: translate3d(-25%, 0, 0);
+    -moz-transform: translate3d(-25%, 0, 0);
+    transform: translate3d(-25%, 0, 0);
+  }
+
+  .section-wrapper {
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+
+  /*navigation*/
+  .main-nav a:hover,
+  .main-nav a:focus {
+    color: #2B2A29;
+  }
+
+  .main-nav a.active:hover {
+    color: #F05A28;
+  }
+
+  /*location controller*/
+  #split_gutter .location-controller {
+    display: none;
+  }
+
+  .dev-reset {
+    display: none !important;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: orange;
+    width: 30px;
+    height: 30px;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
+  .location-controller  {
+    position: relative;
+    top: 0;
+    z-index: 10;
+    -webkit-transform: translate3d(0, 0 , 0);
+    -moz-transform: translate3d(0, 0 , 0);
+    transform: translate3d(0, 0 , 0);
+    cursor: pointer;
+  }
+  .controller-wrapper {
+    position: fixed;
+    top: 330px;
+    /*bottom: 100px;*/
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+    box-sizing: border-box;
+    /*overflow-x: hidden;*/
+  }
+
+  .helper-text {
+/*     top: 390px; */
+    left: 50%;
+    right: auto;
+/*     margin-left: -40px; */
+  }
+
+  /*content backgrounds*/
+ /* .center-street-header {
+    background-position: 85% center;
+  }*/
+  .center-merch {
+    background-position: 30% center;
+  }
+
+  .walkers-point-header {
+    background-position: 25% center;
+  }
+  .walkers-events {
+    background-position: 80% center;
+  }
+  .walkers-about {
+    background-position: 0 center;
+  }
+  .walkers-merch {
+    background-position: 40% center;
+  }
+
+  .main-content {
+    width: 50%;
+    opacity: .7;
+    -webkit-transition: opacity .25s;
+    -moz-transition: opacity .25s;
+    transition: opacity .25s;
+  }
+  .snapped .main-content {
+    opacity: 1;
+  }
+  .section-wrapper {
+    min-width: auto;
+    padding-top: 0;
+  }
+  .center-street-container, 
+  .walker-point-container,
+  .content-wrapper {
+    /*min-width: 300px;*/
+    min-width: 265px;
+  }
+
+  #center_street .content-wrapper,
+  .center-street-container {
+    -webkit-transform: translate3d(5%, 0, 0);
+    -moz-transform: translate3d(5%, 0, 0);
+    transform: translate3d(5%, 0, 0);
+  }
+  #walkers_point .content-wrapper,
+  .walker-point-container {
+    -webkit-transform: translate3d(-5%, 0, 0);
+    -moz-transform: translate3d(-5%, 0, 0);
+    transform: translate3d(-5%, 0, 0);
+  }
+
+  /*mobile logos*/
+  .location-logo {
+    opacity: 0;
+  }
+  .location-logo img {
+    max-width: 200px;
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    transition: .25s;
+  }
+  /*.location-logo.show {
+    position: fixed;
+    top: 85px;
+    left: 0;
+    right: 0;
+  }
+  .location-logo.show img {
+    width: 100px;
+  }*/ 
+
+  .content-wrapper .location-logo {
+    -webkit-animation: contentFadeOut .25s ease-in forwards;
+    -moz-animation: contentFadeOut .25s ease-in forwards;
+    animation: contentFadeOut .25s ease-in forwards;
+    width: 115px;
+    position: relative !important;
+    margin-bottom: 2em;
+  }
+  .snapped .content-wrapper .location-logo,
+  .snapped .center-street-container .location-logo,
+  .snapped .walkers-point-header .location-logo {
+    -webkit-animation: contentFadeIn .25s ease-in .5s forwards;
+    -moz-animation: contentFadeIn .25s ease-in .5s forwards;
+    animation: contentFadeIn .25s ease-in .5s forwards;
+  }
+  .content-wrapper .location-logo img {
+    width: 100%;
+  }
+
+  .fixed-logo {
+    -webkit-animation: contentFadeIn .25s ease-in .75s forwards;
+    -moz-animation: contentFadeIn .25s ease-in .75s forwards;
+    animation: contentFadeIn .25s ease-in .75s forwards;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 90px;
+    margin: 0 auto;
+    display: block;
+    z-index: 100;
+    text-align: center;
+    width: 95%;
+    max-width: 200px;
+    height: 200px;
+    overflow: hidden;
+    -webkit-transition: .25s;
+    -moz-transition: .25s;
+    transition: .25s;
+    cursor: pointer;
+  }
+  .fixed-logo.show {
+    -webkit-animation: contentFadeIn .25s ease-in .75s forwards;
+    -moz-animation: contentFadeIn .25s ease-in .75s forwards;
+    animation: contentFadeIn .25s ease-in .75s forwards;
+    max-width: 115px;
+    height: 115px;
+  }
+  .snapped .fixed-logo,
+  .snapped .fixed-logo.show {
+    -webkit-animation: contentFadeOut .25s ease-in .25s forwards;
+    -moz-animation: contentFadeOut .25s ease-in .25s forwards;
+    animation: contentFadeOut .25s ease-in .25s forwards;
+  }
+  .fixed-logo div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    width: calc(50%);
+    height: 100%;
+    overflow: hidden;
+    -webkit-transition: opacity .25s;
+    -moz-transition: opacity .25s;
+    transition: opacity .25s;
+  }
+  .fixed-logo div.right-logo {
+    left: auto;
+    right: 0;
+  }
+  .fixed-logo div > img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+  }
+  .fixed-logo.show div > img {
+    width: 115px;
+  }
+  .fixed-logo div.right-logo > img {
+    left: auto;
+    right: 0;
+  }
+
+  .logo-clip {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+
+  .secondary-logo {
+    display: none;
+  }
+  .center-street .secondary-logo img {
+    -webkit-transform: translate3d(-80%, -160px, 0);
+    -moz-transform: translate3d(-80%, -160px, 0);
+    transform: translate3d(-80%, -160px, 0);
+  }
+  .center-street .secondary-logo.show img {
+    -webkit-transform: translate3d(-80%, 0, 0);
+    -moz-transform: translate3d(-80%, 0, 0);
+    transform: translate3d(-80%, 0, 0);
+  }
+  .center-street .secondary-logo.show.mobile-pos img {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  .center-street .secondary-logo.show.mobile-add-pos img {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    -moz-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+
+  .walkers-point .secondary-logo img {
+    -webkit-transform: translate3d(-16%, -160px, 0);
+    -moz-transform: translate3d(-16%, -160px, 0);
+    transform: translate3d(-16%, -160px, 0);
+  }
+  .walkers-point .secondary-logo.show img {
+    -webkit-transform: translate3d(-16%, 0, 0);
+    -moz-transform: translate3d(-16%, 0, 0);
+    transform: translate3d(-16%, 0, 0);
+  }
+  .walkers-point .secondary-logo.show.mobile-pos img {
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .walkers-point .secondary-logo.show.mobile-add-pos img {
+    -webkit-transform: translate3d(-50%, 0, 0);
+    -moz-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+  }
+  
+	.walkers-menu,
+	.center-menu {
+	    min-height: 1000px;
+	}
+
+  /*mobile location address*/
+
+  .address-footer {
+    width: 250px;
+    height: 45px;
+    background-color: transparent;
+    background-image: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/octagon-svg.svg);
+    background-repeat: no-repeat;
+    background-position: -1% center;
+    position: fixed;
+    left: 0;
+    bottom: 1em;
+    z-index: 9;
+    -webkit-transform: translate3d(-42%, 0, 0);
+    -moz-transform: translate3d(-42%, 0, 0);
+    transform: translate3d(-42%, 0, 0);
+    box-sizing: border-box;
+    padding: 0 1em;
+    opacity: .7;
+    -webkit-transition: opacity .25s;
+    -moz-transition: opacity .25s;
+    transition: opacity .25s;
+  }
+  .snapped .address-footer {
+    opacity: 1;
+  }
+  .address-footer.wp-address {
+    left: auto;
+    right: 0;
+    /*background-color: blue;*/
+    -webkit-transform: translate3d(46%, 0, 0);
+    -moz-transform: translate3d(46%, 0, 0);
+    transform: translate3d(46%, 0, 0);
+  }
+  .snapped.snap-left .cs-address {
+    opacity: .5;
+  }
+  .snapped.snap-right .wp-address {
+    opacity: .5;
+  }
+  .address-text {
+    text-align: center;
+  }
+
+
+  /*event slider*/
+  .byte-logo-carousel-pane {
+    padding: 0 2em;
+  }
+  
+  
+	/*   drawer campaign css */
+	html.active-drawer,
+    html.active-drawer body {
+      overflow-y: hidden;
+      width: 100%;
+      height: 100%;
+    }
+    .drawer-border-bottom,
+    .content-drawer:before,
+    .drawer-border-left:before,
+    .drawer-border-right:before,
+    .content-drawer:after {
+      display: none;
+    }   
+    .content-drawer {
+      position: absolute;
+      overflow: hidden;
+    } 
+    .drawer-wrapper,
+    .drawer-tabs {
+      height: 100%;
+/*            position: relative; */
+    }   
+    .tab-content {
+/*            display: none; */
+      padding: 0 1em 0;
+      height: 100%;
+      overflow-y: scroll;
+      -webkit-overflow-scrolling: touch;
+    }
+    .tab-content.highlighted {
+/*          overflow-y: scroll; */
+/*          -webkit-overflow-scrolling: touch; */
+/*          -webkit-perspective: 0; */
+    }
+    .tab-wrapper > div {
+      padding-top: 1.75em;
+      margin-bottom: 3em;
+/*            background-color: #7bd5c3; */
+    }
+    .tab-wrapper > div:first-child {
+/*          background-color: #ea7e7e; */
+/*          padding: 2em 1em .5em; */
+    }
+    .drawer-mobile-menu {
+      display: block;
+      -webkit-transition: .25s;
+      transition: .25s;
+      border-top: solid 1px #2B2A29;
+    }
+    .drawer-mobile-menu.open {
+/*              top: calc(100% - 100px); */
+        top: calc(100% - 65px);
+/*            bottom: 50px; */
+      z-index: 210;
+    }
+    .drawer-mobile-menu.open + .main-nav-wrapper.second-pos .main-nav.fuel-menu {
+        top: calc(100% - 63px);
+/*            bottom: 13px; */
+      z-index: 200;
+    }
+    
+    .content-drawer {
+      overflow: hidden;
+    }
+    .content-drawer.open {
+        width: 100%;
+/*            height: calc(100% - 90px); */
+      height: calc(100% - 60px);
+    }
+    
+    .drawer-border-left,
+    .drawer-border-right {
+      border-color: #848382;
+      height: 100%;
+      -webkit-transform: translateX(0);
+              transform: translateX(0);
+    }
+    .drawer-border-left {
+      width: 6px;
+    }
+  
+    .drawer-mobile-menu .slick-dots {
+      opacity: 0;
+      bottom: .1em;
+      left: 0;
+        right: 0;
+        z-index: -1;
+    }
+    .drawer-mobile-menu .slick-dots li {
+      width: 20px;
+      height: 16px;
+      margin: 0;
+    }
+    .drawer-mobile-menu .slick-dots li button {
+      background-color: transparent;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+    }
+    .drawer-mobile-menu .slick-dots li button:before {
+      color: gray;
+      -webkit-transition: .25s;
+      transition: .25s;
+      font-size: 20px;
+    }
+    .drawer-mobile-menu .slick-dots li[aria-hidden="false"] button:before {
+      color: #2B2A29;
+    }
+    
+    .drawer-arrow {
+      display: none;
+    }
+    .tab-nav-wrapper .slick-prev,
+    .tab-nav-wrapper .slick-next {
+      width: 50px;
+      height: 50px;
+      -webkit-transform: translateY(-40%);
+              transform: translateY(-40%);
+      -webkit-transition: .25s;
+      transition: .25s;
+    }
+    
+    .drawer-mobile-menu.open .tab-nav-wrapper .slick-prev,
+    .drawer-mobile-menu.open .tab-nav-wrapper .slick-next {
+      -webkit-transform: translateY(-50%);
+              transform: translateY(-50%);
+    }
+    .tab-nav-wrapper .slick-prev {
+      left: -13%;
+    }
+    .tab-nav-wrapper .slick-next {
+      right: -13%;
+    }
+    .tab-nav-wrapper .slick-prev:before,
+    .tab-nav-wrapper .slick-next:before {
+      font-size: 21px;
+    }
+    
+    .content-drawer h3.content-title {
+        text-align: center;
+        max-width: 240px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .content-drawer .g-recaptcha {
+      width: 70%;
+    }
+    .drawer-mobile-menu.open a {
+      padding-top: 1.8em;
+    }
+    /* mobile menu styles */
+    .main-nav.fuel-menu {
+        width: calc(100% - 48px);
+      background: url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/menu_middle_shadow.svg);
+      background-repeat: repeat-x;
+        background-color: transparent;
+        background-size: auto 100%; 
+        z-index: 300;
+        left: 24px;
+    }
+    .main-nav.fuel-menu:before,
+    .main-nav.fuel-menu:after {
+      background:url(/web/20180313052244im_/http://www.fuelcafe.com/assets/images/menu_end_shadow.svg);
+        background-size: auto 100%;
+      width: 24px;
+    }
+    .main-nav.fuel-menu:before {
+      left: -24px;
+    }
+    .main-nav.fuel-menu:after {
+      right: -24px;
+    }
+    
+    .close-drawer {
+      position: absolute;
+      top: 3.25em;
+      bottom: auto;
+      left: auto;
+      right: 5%;
+      font-size: 21px;
+      color: #F45A1A;
+      letter-spacing: 1.4px;
+      width: auto;
+/*          text-shadow: 0px 1px 1px rgba(0,0,0,.7); */
+      z-index: 10;
+      border: none;
+    }
+    .close-drawer .fa {
+      display: block;
+    }
+    .close-drawer p {
+      display: none;
+    }
+    .content-drawer.open .close-drawer {
+      -webkit-transform: scale(1) rotate(0);
+              transform: scale(1) rotate(0);
+    }
+    .carousel-item {
+      opacity: 1;
+      margin: 0 auto 1em;
+    }
+
+  
+  
+
+  /*.social-container iframe {
+    width: 100%;
+    max-width: 300px;
+    height: 100%;
+  }*/
+
+  .footer-credits div {
+    padding: .5em 0;
+    margin-bottom: .5em;
+  }
+
+  p.footer-right {
+    padding-bottom: 55px;
+  }
+
+	/****** Add Regular WYSIWYG Content for Small Here *******/
+  .img_left_25,
+  .img_left_50,
+  .img_right_25,
+  .img_right_50,
+	.img_full_width {
+		width: 100%;
+		float: none;
+		margin: .5em auto 1em;
+	}
+	.mobile-only {
+		display: block;
+	}
+	.desktop-only {
+		display: none;
+	}
+
+
+}
+
+/* Medium and up */
+/*
+@media screen and (min-width: 40em) {
+
+}
+*/
+
+/* Medium only */
+@media screen and (min-width: 750px) and (max-width: 1023px) {
+
+	/* to disable touch panning / scrolling */
+	html,body {
+		/*overflow-x: hidden;*/
+	}
+	body {
+		/*position: relative;*/
+	}
+	/* give us some space */
+	.grid, .grid-w-gutters { width: 95%; }
+
+	/* standard stuff for medium only screen */
+	.m-one { width: 8.33%; }
+	.m-two { width: 16.66%; }
+	.m-three { width: 25%; }
+	.m-four { width: 33.33%; }
+	.m-five { width: 41.66%; }
+	.m-six { width: 50%; }
+	.m-seven { width: 58.33%; }
+	.m-eight { width: 66.66%; }
+	.m-nine { width: 75%; }
+	.m-ten { width: 83.33%; }
+	.m-eleven { width: 91.66%; }
+	.m-twelve { width: 100%; }
+
+	.m-text-left { text-align: left; }
+	.m-text-right { text-align: right; }
+	.m-text-center { text-align: center; }
+	.m-text-justify { text-align: justify; }
+
+	/* Show mobile navs and details here */
+	.hamb-wrapper {
+		display: block;
+	}
+	.header-logo {
+		padding-top: 5px;
+		margin-left: 5px;
+	}
+	.header-toolmenu {
+		display: none;
+	}
+	.main-navigation {
+		display: none;
+	}
+
+	/****** Add Site CSS Content, Tools for Medium Here *******/
+
+
+	/****** Regular WYSIWYG Content for Medium *******/
+
+	.h2-header {
+		color: #091521;
+		margin: 1em auto .25em;
+		font-family: "Code-Pro", sans-serif;
+		font-weight: 100;
+		font-size: 20px;
+		line-height: 17px;
+	}
+
+	.h3-subheader {
+		font-family: 'Open Sans', sans-serif;
+		color:  #214364;
+	}
+
+	.h3-subheader-italic {
+		margin: .25em auto .75em;
+		font-family: 'Open Sans';
+		font-style: italic;
+		color: #214364;
+		font-weight: 100;
+	}
+
+	.blockquote {
+		display: block;
+		font-family: 'Open Sans', sans-serif;
+		color:  #0c437a;
+		font-size: 17px;
+		font-style: italic;
+		margin-left: 2em;
+		padding-left: 1.5em;
+		border-left: solid 3px #c5d9ec;
+		line-height: 28px;
+		quotes: none;
+	}
+
+	/****** Regular image WYSIWYG Content for Medium *******/
+	.img_right_25,
+	.img_right_50 {
+		float: right;
+		width: 50%;
+		margin: 1em 0 2em 2em;
+	}
+	.img_left_25,
+	.img_left_50 {
+		float: left;
+		width: 50%;
+		margin: 1em 2em 2em 0;
+	}
+
+	.img_full_width {
+		width: 100%;
+		float: none;
+		margin: .5em auto 1em;
+	}
+
+	.mobile-only {
+		display: none;
+	}
+	.desktop-only {
+		display: block;
+	}
+
+}
+
+/* Large and up */
+/* @media screen and (min-width: 64em) { */
+@media screen and (min-width: 1024px) {
+	/* Hide mobile navs and details here */
+	.hamb-wrapper {
+		display: none;
+	}
+	.main-navigation-mobile {
+		display: none;
+	}
+	.content-social-buttons {
+		display: block;
+	}
+	
+	.helper-text.animate:before {
+	    animation: helperSuggestion 1s 1.5s normal;
+        -webkit-animation-iteration-count: 3;
+	    animation-iteration-count: 3;
+    }
+  
+  /****** Add Desktop Only Menu CSS Here *******/
+
+	/****** Regular WYSIWYG Content for Large *******/
+
+	.h2-header {
+		color: #091521;
+		margin: 1em auto .25em;
+		font-family: "Code-Pro", sans-serif;
+		font-weight: 100;
+		font-size: 20px;
+		line-height: 17px;
+	}
+
+	.h3-subheader {
+		font-family: 'Open Sans', sans-serif;
+		color:  #214364;
+	}
+
+	.h3-subheader-italic {
+		margin: .25em auto .75em;
+		font-family: 'Open Sans';
+		font-style: italic;
+		color: #214364;
+		font-weight: 100;
+	}
+
+	.blockquote {
+		display: block;
+		font-family: 'Open Sans', sans-serif;
+		color:  #0c437a;
+		font-size: 17px;
+		font-style: italic;
+		margin-left: 2em;
+		padding-left: 1.5em;
+		border-left: solid 3px #c5d9ec;
+		line-height: 28px;
+		quotes: none;
+	}
+
+	/****** Regular Image WYSIWYG Content for Large *******/
+  .img_right_25,
+  .img_right_50 {
+    float: right;
+    width: 50%;
+    margin: 1em 0 2em 2em;
+  }
+
+  .img_left_25,
+  .img_left_50 {
+    float: left;
+    width: 50%;
+    margin: 1em 2em 2em 0;
+  }
+
+  .img_right_25,
+  .img_left_25 {
+    width: 25%;
+  }
+  
+  .img_full_width {
+    width: 100%;
+    float: none;
+    margin: .5em auto 1em;
+  }
+
+  /*footer*/
+  .footer-credits div:nth-child(2) {
+    padding-top: .5em;
+  }
+}
+
+/* Large only */
+@media screen and (min-width: 64em) and (max-width: 74.9375em) {
+}
+
+/* End Specific Screen Sizes from Foundation */
+
+
+/*IE 11*/
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .secondary-logo {
+    left: 50%;
+  }
+  .show.secondary-logo img {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+/*
+     FILE ARCHIVED ON 05:22:44 Mar 13, 2018 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 04:06:37 Dec 08, 2018.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  LoadShardBlock: 1223.463 (3)
+  esindex: 0.006
+  captures_list: 1272.747
+  CDXLines.iter: 12.972 (3)
+  PetaboxLoader3.datanode: 222.471 (5)
+  exclusion.robots: 0.162
+  exclusion.robots.policy: 0.15
+  RedisCDXSource: 33.374
+  PetaboxLoader3.resolve: 1179.035 (4)
+  load_resource: 273.64
+*/
